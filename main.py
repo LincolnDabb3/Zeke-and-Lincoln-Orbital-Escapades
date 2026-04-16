@@ -13,6 +13,7 @@ screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption('Orbital Escapades')
 clock = pygame.time.Clock()
 
+background = pygame.image.load("stars.jpg")
 
 
 
@@ -24,6 +25,7 @@ while running:
     
 
     screen.fill((255, 255, 255))
+    screen.blit(background, (0, 0))
     pygame.display.flip()
     clock.tick(60)
 
