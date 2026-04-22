@@ -39,10 +39,15 @@ while running:
                 print(f"Left click at {event.pos}")
                 x_pos.append(event.pos[0])
                 y_pos.append(event.pos[1])
-                sx.append(random.random() * 10 - 5)
-                sy.append(random.random() * 10 - 5)
+                sx.append(random.random() * 100 - 50)
+                sy.append(random.random() * 100 - 50)
             elif event.button == 3: # 3 is Right Click
                 print("Right click!")
+                for i in range (100):
+                    x_pos.append(random.random() * 800)
+                    y_pos.append(random.random() * 600)
+                    sx.append(random.random() * 100 - 50)
+                    sy.append(random.random() * 100 - 50)
     
 
     screen.fill((255, 255, 255))
@@ -51,10 +56,20 @@ while running:
 
     for i in range(sx.__len__()):
         screen.blit(planet, (x_pos[i], y_pos[i]))
-        sx[i] += (pygame.mouse.get_pos()[0] - x_pos[i]) / 3
-        sy[i] += (pygame.mouse.get_pos()[0] - y_pos[i]) / 3
-        x_pos[i] += sx[i]
-        y_pos[i] += sy[i]
+        sx[i] += (pygame.mouse.get_pos()[0] - x_pos[i]) / 60
+        sy[i] += (pygame.mouse.get_pos()[1] - y_pos[i]) / 60
+        x_pos[i] += sx[i] / 2
+        if (x_pos[i] > screen.get_width() - 20 or x_pos[i] < 0):
+            sx[i] *= -1
+            x_pos[i] += sx[i] / 2
+        
+        y_pos[i] += sy[i] / 2
+        if (y_pos[i] > screen.get_height() - 40 or y_pos[i] < 0):
+            sy[i] *= -1
+            y_pos[i] += sy[i] / 2
+
+        sx[i] *= 0.999
+        sy[i] *= 0.999
 
     pygame.display.flip()
     clock.tick(60)
