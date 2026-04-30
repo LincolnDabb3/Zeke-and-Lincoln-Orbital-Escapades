@@ -21,10 +21,10 @@ pointer = pygame.transform.scale(pointer, (30, 45))
 planet = pygame.image.load("planet.png")
 planet = pygame.transform.scale(planet, (30, 40))
 
-x_pos = []
-y_pos = []
-sx = []
-sy = []
+x_pos = [] # X positions (not expositions, that's for movies)
+y_pos = [] # Y positions
+sx = [] # Speed Xs
+sy = [] # Speed Ys
 
 pygame.mouse.set_visible(False)
 
