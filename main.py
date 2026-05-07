@@ -27,6 +27,9 @@ HiConPlanet = pygame.transform.scale(HiConPlanet, (30, 40))
 EvilPlanet = pygame.image.load("EvilPlanet.png")
 EvilPlanet = pygame.transform.scale(EvilPlanet, (30, 40))
 
+DarkPlanet = pygame.image.load("DarkPlanet.png")
+DarkPlanet = pygame.transform.scale(DarkPlanet, (30, 40))
+
 planets = [planet,HiConPlanet,EvilPlanet]
 
 
