@@ -21,10 +21,13 @@ pointer = pygame.transform.scale(pointer, (30, 45))
 planet = pygame.image.load("planet.png")
 planet = pygame.transform.scale(planet, (30, 40))
 
-HighContrastPlanet = pygame.image.load("HighContrastPlanet.png")
-HighContrastPlanet = pygame.transform.scale(HighContrastPlanet, (30, 40))
+HiConPlanet = pygame.image.load("HighContrastPlanet.png")
+HiConPlanet = pygame.transform.scale(HiConPlanet, (30, 40))
 
-planets = [planet,HighContrastPlanet]
+EvilPlanet = pygame.image.load("EvilPlanet.png")
+EvilPlanet = pygame.transform.scale(EvilPlanet, (30, 40))
+
+planets = [planet,HiConPlanet,EvilPlanet]
 
 
 x_pos = [] # X positions (not expositions, that's for movies)
