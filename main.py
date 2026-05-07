@@ -30,7 +30,7 @@ EvilPlanet = pygame.transform.scale(EvilPlanet, (30, 40))
 DarkPlanet = pygame.image.load("DarkPlanet.png")
 DarkPlanet = pygame.transform.scale(DarkPlanet, (30, 40))
 
-planets = [planet,HiConPlanet,EvilPlanet]
+planets = [planet,HiConPlanet,EvilPlanet, DarkPlanet]
 
 
 x_pos = [] # X positions (not expositions, that's for movies)
