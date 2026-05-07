@@ -21,6 +21,12 @@ pointer = pygame.transform.scale(pointer, (30, 45))
 planet = pygame.image.load("planet.png")
 planet = pygame.transform.scale(planet, (30, 40))
 
+HighContrastPlanet = pygame.image.load("HighContrastPlanet.png")
+HighContrastPlanet = pygame.transform.scale(HighContrastPlanet, (30, 40))
+
+planets = [planet,HighContrastPlanet]
+
+
 x_pos = [] # X positions (not expositions, that's for movies)
 y_pos = [] # Y positions
 sx = [] # Speed Xs
@@ -55,7 +61,7 @@ while running:
     screen.blit(pointer, (pygame.mouse.get_pos()[0] - 0, pygame.mouse.get_pos()[1] - 10))
 
     for i in range(sx.__len__()):
-        screen.blit(planet, (x_pos[i], y_pos[i]))
+        screen.blit(planets[i % len(planets)], (x_pos[i], y_pos[i]))
         sx[i] += (pygame.mouse.get_pos()[0] - x_pos[i]) / 60
         sy[i] += (pygame.mouse.get_pos()[1] - y_pos[i]) / 60
         x_pos[i] += sx[i] / 2
